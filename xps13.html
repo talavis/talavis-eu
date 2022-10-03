@@ -1,0 +1,160 @@
+<html>
+  <!--(C) 2016 Linus Östberg-->
+  <head>
+    <title>
+      Installation of Archlinux on a Dell XPS 13 9350 
+    </title>
+  </head>
+  
+  <body>
+    <h1>Introduction</h1>
+    <p>
+      This page is mainly intend to contain some notes on what I had to do to install Archlinux with full disc encryption on my new XPS13. My computer has an i5, 1080p screen, 256GB SSD and 8G RAM.
+    </p>
+    <p>
+     I recommend taking a look at the <a href="https://wiki.archlinux.org/index.php/Dell_XPS_13_(2016)">XPS13</a> and <a href="https://wiki.archlinux.org/index.php/beginners'_guide">beginners' guide</a> pages in theArchlinux wiki. Most of my information comes from that wiki, and I sincerely thank all contributors to it.
+    <p>
+      My initial notes were written during the installation, but I might have forgotten some things. If you notice something, please contact me at linus "that a thing" talavis eu.
+     
+      Note that if you follow the instructions, you will delete all old data on the computer. 
+    </p>
+    
+    <h1>Preparations</h1>
+    <p>
+      Get the Archlinux ISO from the <a href="http://www.archlinux.org/">homepage</a>. Install it to a USB memory using e.g.:<br/>
+      <pre>
+	dd if=archlinux-2016.03.01-dual.iso of=/dev/sdx
+      </pre>
+      Next boot the XPS13 and go to BIOS (F12 at boot) and turn off Secureboot to be able to boot from the USB stick with Archlinux. In order to be able too find the hard drive in the XPS13, you will also need to change the SATA controller from "RAID On" to "AHCI".
+    </p>
+    <h1>Installation</h1>
+    <p>
+      Boot from the USB stick and confirm that efivars are working; check if the command <code> ls /sys/firmware/efi/efivars </code> gives any output.
+    </p>
+    <h2>Partitions</h2>
+    <p>
+      Partition the hard drive; myself I decided to reset everything and create two partitions; one EFI partition for /boot and one partition for an encrypted lvm container for the rest. I used gdisk, but you can as well use parted. Note that the disk is attached via nvme, and is thus called nvme0n1 instead of sda
+    <p>
+      Creating the partitions:
+      <pre>
+	# EFI :
+	gdisk /dev/nvme0n1
+	ID: 
+	Start (sector):
+	End (sector): +512M
+	Code: EF00
+
+	# 2nd partion:
+	ID: 2
+	Start (sector):
+	End (sector):
+	Code:
+      </pre>
+      Creating a file system for the EFI partition:
+      <pre>
+	mkfs.vfat -F32 /dev/nvme0n1p1
+      </pre>
+    </p>
+    <h2>Encrypted LVM container</h2>
+    <p>
+      Creating the encrypted lvm container (note that I chose 40 GB for root as I tend to have a lot of programs, and 16 GB for swap as I tend to open a lot of things at the same time; both can be made smaller):
+      <pre>
+	modprobe dm-crypt
+	
+	cryptsetup -c aes-xts-plain64 -y -s 512 luksFormat /dev/nvme0n1p2
+	cryptsetup luksOpen /dev/nvme0n1p2 lvm
+	lvm pvcreate /dev/mapper/lvm
+	lvm vgcreate vgroup /dev/mapper/lvm
+	lvm lvcreate -L 40GB -n root vgroup
+	lvm lvcreate -C y -L 16GB -n swap vgroup
+	lvm lvcreate -l 100%Free -n home vgroup
+      </pre>
+    </p>
+    <p>
+      Making filesystems for the new "partitions":
+      <pre>
+	mkfs.ext4 /dev/mapper/vgroup-root
+	mkfs.ext4 /dev/mapper/vgroup-home
+	mkswap /dev/mapper/vgroup-swap
+      </pre>
+    </p>
+    <h2>Mount partitions</h2>
+    <p>
+      <pre>
+      mount /dev/mapper/vgroup-root /mnt
+      mkdir -p /mnt/boot
+      mount /dev/nvme0n1p1 /mnt/boot
+      mkdir -p /mnt/home
+      mount /dev/mapper/vgroup-home /mnt/home
+      swapon -va /dev/mapper/vgroup-swap
+      </pre>
+    </p>
+    <h2>Connect to the internet</h2>
+    <p>
+      Connect to a wireless connection point using e.g. wifi-menu.
+    </p>
+    <h2>Base installation</h2>
+    <p>
+      Install the basic programs:
+      <pre>
+	pacstrap /mnt base base-devel
+      </pre>
+      Generate a fstab:
+      <pre>
+	genfstab -p -U /mnt >> /mnt/etc/fstab
+      </pre>
+      Chroot to the new installation
+      <pre>
+	arch-chroot /mnt
+      </pre>
+    </p>
+    <h2> Basic settings </h2>
+    <p>
+      <h3>Set hostname</h3>
+      <pre>
+	echo hostname > /etc/hostname
+      </pre>
+      <h3>Set timezone</h3>
+      <pre>
+	ln -s /usr/share/zoneinfo/Your/Timezone /etc/localtime
+      </pre>
+      <h3>Set locale preferences</h3>
+      <p>
+      Append your locale to <code>/etc/locale.conf</code>, e.g.:
+      <pre>
+      LANG="en_GB.UTF-8"
+      LC_COLLATE="C"
+      </pre>
+      and uncomment the corresponding line in <code>/etc/locale.gen</code>, e.g. <code>en_US.UTF-8</code>. Then run <code> locale-gen </code> to generate the locale.
+      </p>
+      <h3>Configure mkinitcpio.conf</h3>
+      Edit <code>/etc/mkinitcpio.conf</code> and add the needed hook for encryption as well the nvme to modules:
+      <pre>
+	MODULES="... nvme"
+	...
+	HOOKS=(... sata encrypt lvm2 filesystems ...)
+      </pre>
+      And afterwards run:
+      <pre>
+	mkinitcpio -p linux
+      </pre>
+    </p>
+    <h2>Bootloader</h2>
+    <p>
+      GRUB is apparently not compatible with nvme disks, and so I decided to use bootd instead. Just use the command:
+      <pre>
+	bootctl install
+      </pre>
+      To add the support for the encrypted lvm, open /boot/loader/entries/arch.conf and add the line:
+      <pre>
+	options cryptdevice=/dev/nvme0n1p2:vgroup root=/dev/mapper/vgroup-root quiet rw
+      </pre>
+    </p>
+    <p>
+      The system should now be ready for reboot. Reboot, remove the USB stick and hope for the best.
+    </p>
+    <h2>Post-installation</h2>
+    To be added....
+    Intended to include e.g. swappiness, intel-ucode, sddm...
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- 
+*** Här skall namnet på ditt delsteg in 
+-->
+<title>Onkogener</title>
+
+
+<link href="http://lillfiluren.se/gc/TributeTo@/css/bootstrap.min.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://lillfiluren.se/gc/TributeTo@/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+</head>
+<body>
+<div class="container">
+	<div class="row">
+	<div class="col-sm-12 col-md-10 col-lg-8">
+		<img class="img-responsive logo	" src="http://lillfiluren.se/gc/TributeTo@/img/kanelbulle.png" width="146" height="139" alt="Kanelbulle">
+		<div class="content">
+			<div class="row">
+			<div class="col-sm-6 col-md-6 col-lg-6">
+				<div class="creator half">
+				Created by <span class="nickname">
+				<!-- 
+				*** Sätt in ditt geocachingnick här, två gånger
+				-->
+					<a href="http://www.geocaching.com/profile/?u=talavis">talavis</a>
+				</span></div>
+			</div>
+			<div class="col-sm-6 col-md-6 col-lg-6">
+				<div class="tribute half"><a href="http://coord.info/GC5CVDF" target="_blank">A Tribute to @</a></div>
+			</div>	
+			</div>
+			<!-- 
+			*** Ytterligare ett ställe som du skall skriva in ditt delstegsnamn på
+			-->
+			<h1>Oncogenes</h1>
+			
+			<div class="row">
+				
+				<div class="col-sm-6 col-md-4 col-lg-4">
+					<!-- 
+					*** byt ut "http://lillfiluren.se/gc/TributeTo@/img/Unknown.jpg" mot en länk till din bild om du har någon, ändra gärna "alt-taggen" också.
+					-->
+					<img class="img-responsive" src="http://talavis.eu/gc/onco/onkogener.png" width="284" height="177" alt="Unknown">
+				</div>
+				
+				<div class="col-sm-6 col-md-8 col-lg-8"><div class="introduction">
+				<p>
+				<!-- 
+				*** Kort introduktion till delsteget och dess koppling till Anders, eller något annat som känns bra att skriva. 
+				-->
+				For people (like myself) who work in the field of medicine, cancer is something that is seen very often. Sadly, it sometimes won't stay at the workplace, but instead happens among friends. This mystery is my attempt at honoring the memory of both Anders and my father, who both died in cancer this year.
+				</p>
+				</div></div></div>
+				<div class="row">
+					<div class="col-sm-12">
+					<h2>Description</h2>
+					<p class="ingress">
+					All multicellular organisms including humans, plants and everything inbetween, have the need of generating new cells to handle growth, wound healing, and many other things.
+					</p>
+					<!-- 
+					*** resten av beskrivningen 
+					-->
+					<p>
+					<h3>Cell Division</h3>
+
+					<p>
+					The cells in the body multiply by cell division, i.e. it creates two identical copies itself. This process is also called the cell cycle.
+					</p>
+					
+					<p>Most of the time, the cells are in a state called G<sub>0</sub> where no cell division is occuring. When the need of new cells arise, the cell will enter the phase G<sub>1</sub> and start growing. The next step is to copy the DNA in the cell in a process called DNA replication. The cell is considered to be in the S (synthesis) phase while the replication occurs. After the S phase, the cell continues to grow in the G<sub>2</sub> phase, until it finally divides into two new cells in a process called mitosis (the M phase).</p>
+					
+					<p>There are a lot of control mechanisms in place during the cell cycle in order to avoid errors and unneccessary cell division. These mechanisms consist of proteins that are produced by the organism.</p>
+					
+					<h3>Control Mechanisms</h3>
+					
+					<p>While the control mechanisms work very well, misstakes may still happen. When the DNA is replicated in the S phase, small errors (mutations) may show up in the new DNA copy. In most cases these small variations are completely harmless, but sometimes they may occur in important parts, e.g. in genes (the parts that encode proteins).</p>
+					
+					<p>If a mutation occurs in one of the genes encoding the proteins for the cell cycle control mechanisms, they might start to malfunction. The problem is probably minor at first, but may over time cause problems in other parts of the control system.</p>
+					
+					<h3>Oncogenes</h3>
+					<p>An oncogene is a gene that has the potential to cause cancer. In many cases, these oncogenes are encoding proteins that are involved in the control mechanisms of the cell cycle. Other functions of oncogenes include the encoding of proteins that control the motility of the cells (their ability to move) or the formation of blood vessels.</p>
+					
+					<p>Many common cancer-causing mutations in oncogenes lead to over- (too much protein is formed) or underexpression (too little protein is formed). If too much of a protein that is responsible for starting phase G<sub>1</sub> is formed, or a protein that is supposed to prevent this is not formed at all, the cell might start the cell cycle when it is not supposed to. A tumor is formed.</p>
+
+<h2>Assignment</h2>
+
+<p>In order to get the password, you will need to perform some analysis of the sequences of a couple of oncogenes. Some of the genes are mutated, either in a critical or non-critical way.</p>
+
+<p>In order to evaluate each gene, you will have to:
+  <ol>
+    <li>Obtain the canonincal (native) sequence for the gene from <a href="http://www.uniprot.org/">UniProt</a>
+    <li>Align the potentially mutated sequence to the canonical (native) sequence for the gene</li>
+    <li>Identify the mutation(s)</li>
+    <li>List the mutations in the standard form, e.g. A15G. This means that the canonical sequence has an alanine in position 15 (the first residue is position 1), which in the mutated sequence is a glycine. Always base the numbering on the canonical sequence.</li>
+  </ol>
+  
+  <p>For alignments, it is recommended to use one of the following:
+  <ul>
+    <li>The built-in functionality of <a href="http://www.uniprot.org/">UniProt</a></li>
+    <li><a href="http://www.ebi.ac.uk/Tools/psa/emboss_needle/">Needle</a></li>
+    <li><a href="http://www.ebi.ac.uk/Tools/msa/kalign/">Kalign</a></li>
+  </ul>
+  
+  <p>The final password that should be entered into coordmaker are the mutations in sequential order. E.g. if the first protein has the mutations A3G and C2A, and the second protein has the mutations P1A and C2D, then the final password is C2AA3GP1AC2D</p>
+  
+<p style="font-size: small">
+  <p><i>P53 (P04637)</i></p>
+  <pre>MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPGP
+DEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTYQGSYGFRLGFLHSGTAK
+SVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHE
+RCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVAVPYEPPEVGSDCTTIHYNYMCNS
+SCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKGEPHHELP
+PGSTKRALPNNTSSSPQPKKKPLDGEYFTLQIRGRERFEMFRELNEALELKDAQAGKEPG
+GSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD</pre>
+
+  <p><i>Proto-oncogene tyrosine-protein kinase Src (P12931)</i></p>
+  <pre>MGSNKSKPKDASQRRRSLEPAENVHGAGGGAFPASQTPSKPASADGHRGPSAAFAPAAAE
+PKLFGGFNSSDTVTSPQRAGPLAGGVTTFVALYDYESRTETDLSFKKGERLQIVNNTEGD
+WWLAHSLSTGQTGYIPSNYVAPSDSIQAEEWYFGKITRRESERLLLNAENPRGTFLVRES
+ETTKGAYCLSVSDFDNAKGLNVKHYKIRKLDSGGFYITSRTQFNSLQQLVAYYSKHADGL
+CHRLTTVCPTSKPQTQGLAKDAWEIPRESLRLEVKLGQGCFGEVWMGTWNGTTRVAIKTL
+KPGTMSPEAFLQEAQVMKKLRHEKLVQLYAVVSEEPIYIVTEYMSKGSLLDFLKGETGKY
+LRLPQLVDMAAQIASGMAYVERMNYVHRDLRAANILVGENLVCKVADFGLARLIEDNEYT
+ARQGAKFPIKWTAPEAALYGRFTIKSDVWSFGILLTELTTKGRVPYPGMVNREVLDQVER
+GYRMPCPPECPESLHDLMCQCWRKEPEERPTFEYLQAFLEDYFTSTEPQYQPGENL</pre>
+
+  <p><i>GTPase HRas (P01112)</i></p>
+  <pre>MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAG
+VEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHQYREQIKRVKDSDDVPMVLVGNKCDL
+AARTVESRQAQDLARSYGIPYIETSAKTRQGVEDAFYTLVREIRQHKLRKLNPPDESGPG
+CMSCKCVLS</pre>
+
+  <p><i>Tumor necrosis factor (P01375)</i></p>
+  <pre>MSTESMIRDVELAEEALPKKTPGPQGSRRCLFLSLFSFLIVAGATTLFCLLHFGVIGPQR
+EEFPRDLSLISPLAQAVRSSSRTPSDKPVAHVVANPQAEGQLQWLNRRANALLANGVELR
+DNQLVVPSEGLYLIYSQVLFKGQGCPSTHVLLTHTISRIAVSYQTKVNLLSAIKSPRQRE
+TPEGAEAKPWYEPIYLGGVFQLEKGDRLSAEINRPDYLDFAESGQVYFGIIAL</pre>
+
+  <p><i>Epidermal growth factor receptor (P00533)</i></p>
+  <pre>MRPSGTAGAALLALLAALCPASRALEEKKVCQGTSNKLTQLGTFEDHFLSLQRMFNNCEV
+VLGNLEITYVQRNYDLSFLKTIQEVAGYVLIALNTVERIPLENLQIIRGNMYYENSYALA
+VLSNYDANKTGLKELPMRNLQEILHGAVRFSNNPALCNVESIQWRDIVSSDFLSNMSMDF
+QNHLGSCQKCDPSCPNGSCWGAGEENCQKLTKIICAQQCSGRCRGKSPSDCCHNQCAAGC
+TGPRESDCLVCRKFRDEATCKDTCPPLMLYNPTTYQMDVNPEGKYSFGATCVKKCPRNYV
+VTDHGSCVRACGADSYEMEEDGVRKCKKCEGPCRKVCNGIGIGEFKDSLSINATNIKHFK
+NCTSISGDLHILPVAFRGDSFTHTPPLDPQELDILKTVKEITGFLLIQAWPENRTDLHAF
+ENLEIIRGRTKQHGQFSLAVVSLNITSLGLRSLKEISDGDVIISGNKNLCYANTINWKKL
+FGTSGQKTKIISNRGENSCKATGQVCHALCSPEGCWGPEPRDCVSCRNVSRGRECVDKCN
+LLEGEPREFVENSECIQCHPECLPQAMNITCTGRGPDNCIQCAHYIDGPHCVKTCPAGVM
+GENNTLVWKYADAGHVCHLCHPNCTYGCTGPGLEGCPTNGPKIPSIATGMVGALLLLLVV
+ALGIGLFMRRRHIVRKRTLRRLLQERELVEPLTPSGEAPNQALLAILKETEFKKIKVLGS
+GAFGTVYKGLWIPEGEKVKIPVAIKELREATSPKANKEILDEAYVMASVDNPHVCRLLGI
+CLTSTVQLITQLMPFGCLLDYVREHKDNIGSQYLLNWCVQIAKGMNYLEDRRLVHRDLAA
+RNVLVKTPQHVKITDFGLAKLLGAEEKEYHAEGGKVPIKWMALESILHRIYTHQSDVWSY
+GVTVWELMTFGSKPYDGIPASEISSILEKGERLPQPPICTIDVYMIMVKCWMIDADSRPK
+FRELIIEFSKMARDPQRYLVIQGDERMHLPSPTDSNFYRALMDEEDMDDVVDADEYLIPQ
+QGFFSSPSTSRTPLLSSLSATSNNSTVACIDRNGLQSCPIKEDSFLQRYSSDPTGALTED
+SIDDTFLPVPEYINQSVPKRPAGSVQNPVYHNQPLNPAPSRDPHYQDPHSTAVGNPEYLN
+TVQPTCVNSTFDSPAHWAQKGSHQISLDNPDYQQDFFPKEAKPNGIFKGSTAENAEYLRV
+APQSSEFIGA</pre>
+</p>
+</p>
+					</p>
+					</div>
+				</div>
+			<footer>
+				<div class="row">
+					<div class="col-sm-12">
+					<center>
+					<!-- 
+					*** Redigera länken till din geochecker eller coordmaker, ta bort den som inte behövs
+					-->
+
+						<!-- CoordMaker -->
+						<a href="http://lillfiluren.se/gc/CoordMaker/?geochecker=6185944835a7af2-116a-4357-aa0d-0ebcce4157b3&iframe=true&ignorecase=true&key=GC5CVDFONKOGENER"&>
+							<img src="http://lillfiluren.se/gc/CoordMaker/image.php?gid=6185944835a7af2-116a-4357-aa0d-0ebcce4157b3" 
+								title="Check your solution" border="0">
+						</a>
+
+					</center>
+					</div>
+				</div>
+			</footer>
+			<div class="row">
+			<div class="col-sm-6 col-md-6 col-lg-6">
+				<div class="creator half">
+				Contact <span class="nickname">
+				<!-- 
+				*** Sätt in ditt geocachingnick här, två gånger
+				-->
+					<a href="http://www.geocaching.com/email/?u=talavis">talavis</a>
+				</span></div>
+			</div>
+		
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

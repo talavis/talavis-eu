@@ -1,0 +1,1237 @@
+﻿/* -----------------------------------------------------------------------
+
+Geocaching Top-Level Navigation Master Screen CSS File
+This file provides screen CSS styles to the entire Geocaching Web site.  Please contact webdesign@groundspeak.com with questions.
+Last Updated: 29 Oct 2013 by JS
+	
+----------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------
+Begin Skip Links
+----------------------------------------------------------------------- */
+
+.SkipLinks{
+text-align:left;
+}
+.SkipLinks a,.SkipLinks a:link,.SkipLinks a:visited{
+position:absolute;
+left:-10000px;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+.SkipLinks a:hover,.SkipLinks a:focus,.SkipLinks a:active{
+position:static;
+left:0;
+width:auto;
+height:auto;
+overflow:visible;
+text-decoration:underline;
+}
+
+/* -----------------------------------------------------------------------
+End Skip Links
+
+Begin Warning Messages
+----------------------------------------------------------------------- */
+
+.WarningMessage{
+min-width:990px;
+min-height:57px;
+text-align:left;
+background-color:#fccf33;
+border-bottom:1px solid #000;
+border-bottom:1px solid rgba(0,0,0,0.5);
+}
+.WarningMessage p{
+margin:0 !important;
+}
+.WarningMessage.DownTime{
+background:#fccf33 url("/images/tlnMasters/sprite_banners.png") no-repeat -10px -214px;
+}
+.WarningMessage.DownTime p{
+padding:10px 10px 0 170px;
+}
+.WarningMessage.Staging{
+background:#fccf33 url("/images/tlnMasters/sprite_banners.png") no-repeat -192px -146px;
+}
+.WarningMessage.Staging p{
+padding:10px 10px 0 120px;
+}
+.WarningMessage.Validate{
+background:#fccf33 url("/images/tlnMasters/sprite_banners.png") no-repeat -374px -78px;
+}
+.WarningMessage.PhaseOut{
+background:#fccf33 url("/images/tlnMasters/sprite_banners.png") no-repeat -556px -10px;
+}
+.WarningMessage.Validate p,.WarningMessage.PhaseOut p{
+padding:10px 10px 0 140px;
+}
+
+/* -----------------------------------------------------------------------
+End Warning Messages
+
+Begin General Styling
+----------------------------------------------------------------------- */
+html{
+background:#836344 url(/images/tlnMasters/pattern-speckle-836344.jpg) repeat;
+}
+body{
+font-family:Verdana,Arial,Helvetica,Geneva,sans-serif;
+-webkit-font-smoothing:antialiased;
+color:#594a42;
+background-color:#fff;
+}
+img{
+padding:0;
+border:0;
+font-weight:inherit;
+font-style:inherit;
+font-size:100%;
+font-family:inherit;
+vertical-align:baseline;
+}
+.BottomSpacing{
+margin-bottom:1.5em;
+}
+h2.BottomSpacing{
+margin-bottom:1em;
+}
+.TopSpacing{
+margin-top:1.5em;
+}
+h2.TopSpacing{
+margin-top:1em;
+}
+.NoBottomSpacing{
+margin-bottom:0;
+}
+.AlignLeft{
+text-align:left !important;
+}
+.AlignCenter{
+text-align:center !important;
+}
+.AlignRight,table.Table th.AlignRight,table.Table td.AlignRight{
+text-align:right !important;
+}
+.NoWrap{
+white-space:nowrap;
+}
+.HalfLeft{
+width:48%;
+float:left;
+}
+.HalfRight{
+width:48%;
+float:right;
+}
+.FloatLeft{
+float:left;
+}
+.FloatRight{
+float:right;
+}
+.Third{
+float:left;
+width:30%;
+}
+.Clear{
+clear:both;
+}
+pre{
+white-space:pre-wrap;
+}
+.PrintOnly{
+display:none;
+}
+.FloatContainer{
+overflow:hidden;
+}
+.HorizontalRule{
+border-top:1px solid #000;
+margin:2.5em 0 1em;
+position:relative;
+}
+.HorizontalRule span{
+position:relative;
+top:-.75em;
+background:#fff;
+padding:.5em;
+}
+.VerticalRule{
+border-right:1px solid #000;
+margin:0 2.5em 0;
+height:340px;
+}
+.VerticalRule p{
+background:#fff;
+padding:.5em 0;
+position:relative;
+width:2em;
+top:45%;
+}
+.InlineBlock{
+display:inline-block !important;
+}
+ol.lower-roman{
+list-style-type:lower-roman;
+margin:1em 0;
+}
+ol.lower-roman > li{
+margin-left:1em;
+}
+ol.upper-alpha{
+list-style-type:upper-alpha;
+margin-left:2.5em;
+}
+ol.upper-alpha > li{
+margin-bottom:1em;
+}
+/* -----------------------------------------------------------------------
+End General Styling
+
+Begin Legacy Styles
+----------------------------------------------------------------------- */
+
+.hideMe,.Hidden{
+display:none;
+}
+a.lnk{
+text-decoration:none;
+}
+a.lnk span{
+text-decoration:underline;
+}
+a.lnk img{
+vertical-align:text-bottom;
+}
+
+/* -----------------------------------------------------------------------
+End Legacy Styles
+
+Begin Header
+----------------------------------------------------------------------- */
+
+header{
+padding:0 20px;
+min-width:950px;
+min-height:86px;
+background:#4a742c url(/images/tlnMasters/pattern-topo.jpg) repeat;
+}
+header .Logo{
+float:left;
+margin:22px 0;
+}
+header .ProfileWidget{
+min-width:310px;
+float:right;
+margin:10px 0;
+font-size:11px;
+color:#fff;
+background-color:#385822;
+background-color:rgba(0,0,0,0.2);
+border-radius:5px;
+}
+header .ProfileWidget p{
+margin-bottom:0;
+}
+header .ProfileWidget .NotSignedInText,header .ProfileWidget #SignInWidget p{
+padding:9px;
+}
+header .ProfileWidget .NotSignedInText{
+padding:13px 9px 0;
+font-size:1.1em;
+float:left;
+width:130px;
+}
+header .ProfileWidget .NotSignedInLinks{
+padding:5px 9px 9px;
+}
+header .ProfileWidget .Avatar{
+float:left;
+padding:9px;
+width:48px;
+height:48px;
+}
+header .ProfileWidget .Avatar img{
+width:48px;
+height:48px;
+}
+header .ProfileWidget .SignedInText{
+margin-left:58px;
+padding:9px;
+}
+header .ProfileWidget .SignedInText img{
+vertical-align:middle;
+}
+.ProfileWidget .SignedInProfileLink,.ProfileUsername{
+display:inline-block;
+max-width:120px;
+overflow:hidden;
+text-overflow:ellipsis;
+vertical-align:bottom;
+}
+.ProfileUsername{
+max-width:200px;
+}
+#SignInWidget {
+display:none;
+position:absolute;
+left:0;
+right:0;
+z-index:101;
+margin-top:-5px;
+background-color:#385822;
+background-color:rgba(56, 88, 34, 0.97);
+border-radius:0 0 5px 5px;
+}
+.ProfileWidget.WidgetOpen{
+background-color:#385822;
+position:relative;
+}
+#SignInWidget h3{
+color:#fff;
+font-size:1.4em;
+font-weight:normal;
+padding:15px 9px 0;
+}
+#SignInWidget a{
+text-decoration:none;
+color:#d2e593;
+}
+#SignInWidget a:hover{
+text-decoration:underline;
+}
+#SignInWidget .Checkbox{
+float:left;
+}
+#SignInWidget input.text{
+-moz-box-sizing:border-box;
+-webkit-box-sizing:border-box;
+box-sizing:border-box;
+border:none;
+border-radius:2px;
+box-shadow:0 2px 0 #ccc inset;
+width:100% !important;
+padding:.75em
+}
+#SignInWidget .LinkButton{
+font-size:1.2em;
+font-weight:bold;
+text-shadow:0 -1px 0 #4c7431;
+width:100%;
+cursor:pointer;
+padding:.5em;
+margin-bottom:.75em;
+}
+/* -----------------------------------------------------------------------
+End Header
+
+Begin Navigation
+----------------------------------------------------------------------- */
+nav{
+background:#9db157 url(/images/tlnMasters/pattern-speckle-9db157.jpg) repeat;
+padding:0 20px;
+min-width:950px;
+}
+nav .container{
+display:table;
+}
+ul.Menu,.LanguageSelector{ /* overflow fix */
+display:table-cell;
+vertical-align:top;
+}
+ul.Menu,ul.SubMenu{
+margin:0;
+padding:0;
+list-style:none;
+font-size:11px;
+}
+ul.Menu li,ul.SubMenu li{
+padding:0;
+color:#fff;
+font-weight:bold;
+}
+ul.Menu{
+position:relative;
+z-index:100;
+margin:0;
+}
+ul.Menu li{
+float:left;
+zoom:1;
+}
+ul.Menu > li{
+padding:0 0 0 1em;
+}
+ul.Menu > li:first-child{
+margin-left:-1em;
+}
+.no-touch .Menu li:hover,.Menu li.hover{
+background:#b9c17a;
+}
+.Menu .Dropdown:after{
+content:'\25BC';
+margin-left:.25em;
+}
+ul.Menu li a{
+display:block;
+font-weight:bold;
+margin:.5em 1.25em .5em 0;
+}
+ul.SubMenu{
+padding-top:1em;
+padding-bottom:1em;
+background:#b9c17a;
+border-radius:0 0 5px 5px;
+}
+ul.SubMenu li {
+min-width: 250px;
+margin: 0;
+}
+.no-touch ul.SubMenu li:hover{
+background:#9db157 url(/images/tlnMasters/pattern-speckle-9db157.jpg) repeat;
+}
+ul.SubMenu li a{
+margin:0;
+padding:0.5em 1em;
+}
+ul.SubMenu li a.NoRightPadding{
+margin:0;
+padding-right:0;
+display:inline-block;
+}
+ul.SubMenu li a.NoSidePadding{
+margin:0;
+padding-left:0;
+padding-right:0;
+display:inline-block;
+}
+ul.Menu li.hover,.no-touch ul.Menu li:hover{
+position:relative;
+}
+ul.Menu li.hover .SubMenu,.no-touch ul.Menu li:hover .SubMenu{
+display:block;
+}
+ul.Menu ul{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+}
+.SubMenu.menu-mobile,.no-touch ul.Menu li:hover .SubMenu.menu-mobile{
+display:none;
+}
+ul.Menu ul li{
+float:none;
+}
+.SubNavFacebook:before,.SubNavInstagram:before,.SubNavTwitter:before,.SubNavYouTube:before{
+content:'';
+display:inline-block;
+height:16px;
+width:16px;
+margin-right:.5em;
+vertical-align:middle;
+background:url(/images/tlnMasters/social-media-sprite.png) 0 0 no-repeat;
+}
+.SubNavInstagram:before{
+background-position: -32px 0;
+}
+.SubNavTwitter:before{
+background-position: -48px 0;
+}
+.SubNavYouTube:before{
+background-position: -16px 0;
+}
+.LocaleText{
+float:left;
+}
+.LocaleList{
+margin-left:5px;
+float:left;
+}
+.language-list{
+position:absolute;
+background:#836344 url(/images/tlnMasters/pattern-speckle-836344.jpg) repeat;
+z-index:100;
+padding-left:0;
+border-radius:5px;
+display:none;
+}
+.language-list li{
+list-style:none;
+padding:5px 10px;
+}
+nav .language-list{
+background:#9db157 url(/images/tlnMasters/pattern-speckle-9db157.jpg) repeat;
+margin:0 0 1.5em;
+border-radius:0 0 5px 5px;
+min-width:100%;
+}
+nav .LocaleText{
+display:none;
+}
+nav .LocaleList{
+float:right;
+font-size:.9em;
+position:relative; /* menu z-index fix */
+z-index:100;
+}
+nav .selected-language a{
+color:#fff;
+text-decoration:none;
+background:url(../images/masters/globe_sm.png) no-repeat 5px 50%;
+padding:5px 5px 5px 25px;
+font-weight:bold;
+display:block;
+}
+nav .selected-language a.Expanded{
+}
+/* -----------------------------------------------------------------------
+End Navigation
+
+Begin Content
+----------------------------------------------------------------------- */
+
+#Content .container{
+padding:0 20px 1.5em;
+width:950px;
+background-color:#fff;
+}
+*+html #Content .container{
+/* IE7 Hack */
+background-color:#fff;
+}
+.CacheDetailsPage #Content .container{
+margin-bottom:250px;
+background-color:#fff;
+}
+*+html .CacheDetailsPage #Content .container{
+/* IE7 Hack */
+margin-bottom:250px;
+background-color:#fff;
+}
+.BreadcrumbWidget p{
+margin-top:1.5em;
+font-size:11px;
+}
+ul, ol{
+margin-left:1.5em;
+}
+ul.unstyled,ol.unstyled,ul.inline,ol.inline{
+margin:0;
+list-style-type:none;
+padding:0;
+}
+ul.inline > li, ol.inline > li{
+display:inline-block;
+}
+*+html ul.inline > li,*+html ol.inline > li{ /* IE7 Hack */
+display:inline;
+}
+#Content .tabBody{
+padding:1em;
+}
+
+/* -----------------------------------------------------------------------
+End Content
+
+Begin Footer
+----------------------------------------------------------------------- */
+
+footer{
+min-width:950px;
+padding:0 20px;
+font-size:11px;
+color:#4a4e52;
+background:#f5ebdf url(/images/tlnMasters/pattern-speckle-f5ebdf.jpg) repeat;
+}
+footer .column-container{
+display:table;
+}
+footer .column{
+float:none;
+display:table-cell;
+}
+footer .column + .column{
+padding-left:15px;
+}
+.FooterTop{
+margin:1.25em 0;
+}
+.FooterLinksHeader{
+margin-bottom:.5em;
+}
+.FooterBottom{
+background:#87705a url(/images/tlnMasters/pattern-speckle-836344.jpg) repeat;
+color:#fff;
+font-size:.9em;
+margin:1.5em -20px 0;
+padding:.5em 20px;
+}
+.FooterBottom .container:after{
+content:' ';
+background:url(/images/tlnMasters/squirrel.png) no-repeat 0 0;
+position:absolute;
+top:-33px;
+right:0;
+width:36px;
+height:33px;
+overflow:visible;
+visibility:visible;
+}
+.FooterBottom .container{
+position:relative;
+}
+.FooterBottom p{
+margin:0 40px 0 0;
+}
+ul.FooterLinks{
+margin:0;
+padding:0;
+list-style:none;
+}
+ul.FooterLinks.FollowUsLinks li{
+float:left;
+width:22px;
+margin:.25em .5em 0 0;
+}
+.FollowUsLinks a{
+width:16px;
+height:16px;
+display:inline-block;
+background:url(/images/tlnMasters/social-media-sprite.png) no-repeat 0 0;
+}
+.FollowUsLinks a[href*="facebook"]{
+background-position:0 -16px;
+}
+.FollowUsLinks a[href*="facebook"]:hover{
+background-position:0 -32px;
+}
+.FollowUsLinks a[href*="twitter"]{
+background-position:-48px -16px;
+}
+.FollowUsLinks a[href*="twitter"]:hover{
+background-position:-48px -32px;
+}
+.FollowUsLinks a[href*="youtube"]{
+background-position:-16px -16px;
+}
+.FollowUsLinks a[href*="youtube"]:hover{
+background-position:-16px -32px;
+}
+.FollowUsLinks a[href*="instagram"]{
+background-position:-32px -16px;
+}
+.FollowUsLinks a[href*="instagram"]:hover{
+background-position:-32px -32px;
+}
+/* -----------------------------------------------------------------------
+End Footer
+
+Begin Links
+----------------------------------------------------------------------- */
+
+a,a:link,a:hover,a:active,a:focus,a:visited{
+border:0;
+outline:0;
+}
+.WarningMessage a,.WarningMessage a:link,.WarningMessage a:visited{
+color:#594a42;
+text-decoration:underline;
+}
+.WarningMessage a:hover,.WarningMessage a:active,.WarningMessage a:focus{
+color:#717073;
+text-decoration:none;
+}
+.ProfileWidget a,.ProfileWidget a:link,.ProfileWidget a:visited{
+color:#fff;
+text-decoration:underline;
+}
+.ProfileWidget a:hover,.ProfileWidget a:active,.ProfileWidget a:focus{
+color:#d2e593;
+text-decoration:none;
+}
+footer .language-list a,.language-list a:link,.language-list a:visited{
+color:#fff;
+text-decoration:none;
+}
+.language-list a:hover,footer .language-list a:active,footer .language-list a:focus{
+color:#fff;
+text-decoration:underline;
+}
+.ProfileWidget a.LinkButton,#SignInWidget .LinkButton{
+display:inline-block;
+text-decoration:none;
+background:#8ea445;
+background: -o-linear-gradient(top, #8ea445 0%,#7d9333 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8ea445), color-stop(100%,#7d9333));
+background: -webkit-linear-gradient(top, #8ea445 0%,#7d9333 100%);
+background: -ms-linear-gradient(top, #8ea445 0%,#7d9333 100%);
+background: linear-gradient(to bottom, #8ea445 0%,#7d9333 100%);
+color:#fff;
+margin-top:.25em;
+border:none;
+border-bottom:1px solid #748632;
+border-radius:3px;
+}
+.ProfileWidget a.LinkButton{
+padding:.25em 1.5em;
+box-shadow:inset 0 1px 1px #cbe182;
+}
+.ProfileWidget a.LinkButton:hover,.ProfileWidget a.LinkButton:active,.ProfileWidget a.LinkButton:focus{
+box-shadow:inset 0 1px 1px #eaff92;
+}
+.ProfileWidget a.LinkButton:hover,.ProfileWidget a.LinkButton:active,.ProfileWidget a.LinkButton:focus,#SignInWidget .LinkButton:hover,#SignInWidget .LinkButton:active,#SignInWidget .LinkButton:focus{
+border-bottom-color:#7a8d37;
+background:#adc755;
+background: -o-linear-gradient(top, #adc755 0%,#99b04c 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#adc755), color-stop(100%,#99b04c));
+background: -webkit-linear-gradient(top, #adc755 0%,#99b04c 100%);
+background: -ms-linear-gradient(top, #adc755 0%,#99b04c 100%);
+background: linear-gradient(to bottom, #adc755 0%,#99b04c 100%);
+text-shadow:0 1px 0 rgba(0,0,0,.18);
+}
+.WidgetOpen .SignInLink{
+color:#d2e593 !important;
+text-decoration:none !important;
+}
+.Menu li a,.Menu li a:link,.Menu li a:visited{
+color:#fff;
+text-decoration:none;
+}
+#Content a,#Content a:link{
+color:#00447c;
+}
+#Content a:visited{
+color:#00a0af;
+}
+#Content .OldWarning.Strike a,#Content .OldWarning.Strike a:link{
+color:#c00;
+}
+#Content .OldWarning.Strike a:visited{
+color:#c00;
+}
+#Content a:hover,#Content a:active,#Content a:focus,#Content a .Strike.OldWarning:hover,#Content a .Strike.OldWarning:focus,#Content a .Strike.OldWarning:active{
+color:#f89728;
+}
+footer a{
+color:#4a4e52;
+text-decoration:none;
+}
+footer a:hover,footer a:active, footer a:focus{
+color:#4a4e52;
+text-decoration:underline;
+}
+.FooterBottom a,.FooterBottom a:hover,.FooterBottom a:active,.FooterBottom a:focus{
+color:#fff;
+}
+.ImageLink{
+position:relative;
+top:2px;
+}
+#Content .CacheCodeWidget a,#Content .CacheCodeWidget a:link,#Content .CacheCodeWidget a:visited{
+color:#717073;
+text-decoration:none;
+}
+#Content .CacheCodeWidget a:hover,#Content .CacheCodeWidget a:active,#Content .CacheCodeWidget a:focus{
+color:#594a42;
+text-decoration:none;
+}
+a.Close{
+text-decoration:none;
+font-weight:bold;
+border:1px solid #adafb2;
+padding:0 0.25em;
+background:#ebeced;
+color:#717073 !important;
+font-size:.9em;
+text-shadow:-1px 0 #fff;
+}
+a.Close:hover{
+border-color:#717073;
+}
+
+/* -----------------------------------------------------------------------
+End Links
+
+Begin Fonts
+----------------------------------------------------------------------- */
+
+h1,h2,h3,h4,h5,h6{
+margin-bottom:0;
+font-weight:bold;
+color:#594a42;
+}
+dl dd{
+padding-bottom:1em;
+}
+input, select, textarea{
+font-family:Verdana, Arial, Helvetica, Geneva, Sans-Serif;
+-webkit-font-smoothing:antialiased;
+font-size:100%;
+}
+.Strike{
+text-decoration:line-through !important;
+}
+
+/* -----------------------------------------------------------------------
+End Fonts
+
+Begin Forms
+----------------------------------------------------------------------- */
+
+.Warning,.Validation,.red,.OldWarning,.Warning *{
+color:#8c0b0b !important;
+}
+.Success,.green,.Success *{
+color:#54b948 !important;
+}
+input.text,input.Text,input.Password,input.File,textarea.Textarea,select.Select{
+width:60% !important;
+}
+.InputWidth{
+width:89%;
+}
+fieldset{
+padding:1.5em;
+border:1px solid #594a42;
+position:relative;
+}
+legend{
+font-weight:bold;
+}
+.Checkbox label{
+position:relative;
+top:-3px;
+font-weight:normal !important;
+}
+.error{
+display:block;
+width:87% !important;
+margin-bottom:0 !important;
+font-size:11px;
+}
+.FormSummaryWidget{
+margin:1.5em 0;
+padding:8px 12px;
+color:#594a42;
+background-color:#f0f0f0;
+border:1px solid #594a42;
+border-radius:4px;
+}
+.FormSummaryWidget .Button + .Button{
+margin-left:1.5em;
+}
+.FormSummaryWidget p,.FormSummaryWidget ul{
+margin-bottom:0;
+}
+.FormSummaryWidget.FormErrorWidget{
+background-color:#f3e6e6;
+border-color:#d19d9d;
+color:#8c0b0b !important;
+}
+.FormSummaryWidget.FormSuccessWidget{
+background-color:#f6fbf6;
+border-color:#54b948;
+color:#54b948 !important;
+}
+.FormSummaryWidget.FormWarningWidget{
+background-color:#fef5eb;
+border-color:#fdd9b0;
+}
+.FormSummaryWidget.FormErrorWidget h4{
+background:url('/images/icons/sprite_form_icons.png') no-repeat -64px -16px;
+color:#8c0b0b !important;
+padding-left:1.5em !important;
+}
+.FormSummaryWidget.FormSuccessWidget h4{
+background:url('/images/icons/sprite_form_icons.png') no-repeat 0 -80px;
+color:#54B948 !important;
+padding-left:1.5em !important;
+}
+.FormSummaryWidget.FormSuccessWidget p{
+padding-left:20px;
+}
+.FormSummaryWidget.InformationWidget{
+background-color:#ebeced;
+border:1px solid #dfe1d2;
+}
+.FormIcon{
+display:inline-block;
+width:16px;
+height:16px;
+text-indent:-999999px;
+background:url(/images/icons/sprite_form_icons.png) no-repeat;
+}
+.FormValidationIcon{
+background-position:-64px -16px;
+}
+.ProfileWidget .FormSummaryWidget{
+margin:1em;
+padding:6px;
+}
+.ProfileWidget .FormSummaryWidget.FormErrorWidget h4{
+margin-bottom:.25em;
+background-image:none;
+padding-left:0 !important;
+}
+.ProfileWidget .FormValidationIcon{
+background-position:-32px -48px;
+float:right;
+position:relative;
+top:2.25em;
+right:.5em;
+}
+.InformationWidget .HorizontalRule{
+border-color:#594a42;
+}
+.InformationWidget .HorizontalRule span{
+background:#ebeced;
+font-size:1.5em;
+font-variant:small-caps;
+line-height:1;
+}
+
+/* -----------------------------------------------------------------------
+End Forms
+
+Begin Tables
+----------------------------------------------------------------------- */
+
+h3 + table.Table{
+margin-top:.5em;
+}
+table.Table {
+width:100%;
+border:2px solid #fff;
+border-collapse:collapse;
+border-spacing:0;
+}
+table.ChooseDeviceTable,table.RadioButtonsTable,table.RadioButtonsTable td,table.GalleryListTable,table.GalleryListTable td,table.CheckboxTable,table.CheckboxTable td{
+border:none;
+}
+table.Table th,table.Table td{
+margin:0;
+padding:.5em;
+text-align:left;
+}
+table.Table th,td.TableHeader,th.TableHeader{
+background-color:#e3ddc2 !important;
+border:2px solid #fff;
+border-top:none;
+font-weight:bold;
+}
+table.Table td{
+background-color:#fff;
+border-left:2px solid #fff;
+border-right:2px solid #fff;
+}
+table.Table tr.AlternatingRow td,.AlternatingRow,table.Table tr td.AlternatingRow,tr.Row2 td,tr.Row4 td,tr.Row6 td,tr.Row8 td,tr.Row10 td{
+background-color:#ebeced;
+}
+table.Table tr.SolidRow td,.SolidRow,table.Table tr td.SolidRow,tr.Row1 td,tr.Row3 td,tr.Row5 td,tr.Row7 td,tr.Row9 td{
+background-color:#fff;
+}
+table.Table tr.TertiaryRow td,.TertiaryRow,table.Table tr td.TertiaryRow{
+background-color:#d7d7d7;
+}
+table.Table tr.UserOwned td,.UserOwned,table.Table tr td.UserOwned{
+background-color:#f8edb4;
+}
+table.Table tr.BeginnerRow td, .BeginnerRow, table.Table tr td.BeginnerRow{
+background:#d7e57c;
+}
+table.NoZebra tr:nth-child(even) td {
+background:transparent;
+}
+table.RadioButtonsTable,table.CheckboxTable{
+width:60%;
+}
+table.RadioButtonsTable td,table.CheckboxTable td{
+padding:0;
+}
+tr.BorderTop td,table.Table tr td.TableFooter,table.Table tfoot tr td{
+border-top:2px solid #fff;
+}
+table.Table tfoot tr td,table.Table tr td.TableFooter{
+background-color:#eff0e8;
+}
+tr.BorderBottom td{
+border-bottom:2px solid #fff;
+}
+table.WordWrap {
+table-layout:fixed;
+word-wrap:break-word;
+}
+table td.Merge {
+border-left:none;
+border-right:none;
+}
+
+/* -----------------------------------------------------------------------
+End Tables
+
+Begin Icons
+----------------------------------------------------------------------- */
+
+.Icon{
+text-decoration:none;
+position:relative;
+top:3px;
+margin-right:5px;
+}
+.IconButton{
+padding:4px;
+border-radius:4px;
+}
+.IconButton:hover{
+background-color:#ebeced;
+}
+
+/* -----------------------------------------------------------------------
+End Icons
+
+Begin Ads
+----------------------------------------------------------------------- */
+
+.MasterPageAds{
+margin:-28px 0 0 30px;
+}
+.InlinePageAds{
+margin-top:1.5em;
+text-align:center;
+width:100% !important;
+}
+.GPSReviewAds{
+margin:18px 0 0 30px;
+text-align:center;
+}
+.AmazonIFrameAd{
+position:relative;
+top:-28px;
+left:30px;
+}
+
+/* -----------------------------------------------------------------------
+End Ads
+
+Begin jQuery Fixes
+----------------------------------------------------------------------- */
+
+#Content .ui-tabs{
+padding:0;
+}
+#Content .ui-tabs ul{
+margin-left:0;
+border-width:0 0 1px;
+border-radius:5px 5px 0 0;
+}
+#Content .ui-state-default a,#Content .ui-state-default a:link,#Content .ui-state-default a:visited{
+color:#594a42;
+text-decoration:none;
+}
+#Content .ui-state-hover a,#Content .ui-state-hover a:hover{
+color:#594a42;
+text-decoration:none;
+}
+#Content .ui-state-active a,#Content .ui-state-active a:link,#Content .ui-state-active a:visited{
+color:#594a42;
+text-decoration:none;
+}
+#Content .ui-tabs .ui-tabs-nav li.ui-tabs-selected a,#Content .ui-tabs .ui-tabs-nav li.ui-state-disabled a,#Content .ui-tabs .ui-tabs-nav li.ui-state-processing a{
+cursor:text;
+}
+.ui-tabs.ui-widget-content{
+border-color:#abadb1;
+}
+.ui-tabs ul.ui-widget-header li{
+border-color:#c8c9ca;
+}
+.ui-tabs ul.ui-widget-header,.ui-tabs ul.ui-widget-header li.ui-state-active{
+border-color:#999;
+}
+.ui-tabs .ui-widget-header{
+background:#f2f3f4;
+}
+#Content .ui-tabs .ui-state-active a{
+color:#717073;
+font-weight:bold;
+position:relative; /* HACK - hide bottom border of active tab */
+top:2px;
+background:#fff;
+border-radius:3px 3px 0 0;
+}
+/* -----------------------------------------------------------------------
+End jQuery Fixes
+
+Begin Facebook Login Button
+----------------------------------------------------------------------- */
+a.btnFacebookLogin,a.btnFacebookLogin:link,a.btnFacebookLogin:visited,a.btnFacebookLogin:hover,a.btnFacebookLogin:active{
+color:#fff !important;
+cursor:pointer;
+text-decoration:none;
+}
+a.btnFacebookLogin{
+background:#29447e url('../images/facebook/facebook_sm.png') no-repeat 0 0;
+font:bold 11px/14px "lucida grande",Tahoma,Verdana,arial,sans-serif;
+padding:0 0 0 1px;
+margin-left:1em;
+display:inline-block;
+}
+a.btnFacebookLogin span{
+background-color: #5F78ab;
+border-bottom:1px solid #1a356e;
+border-top:1px solid #879ac0;
+margin:1px 1px 0 21px;
+padding:2px 6px 3px;
+display:block;
+}
+.ProfileWidget .LoginWithFacebook{
+padding:9px 9px 0 0;
+float:right;
+}
+.ProfileWidget a.btnFacebookLogin{
+float:right;
+margin-left:0;
+color:#f4f5f6;
+font-family:'Helvetica Neue', Arial, Helvetica, sans-serif;
+box-shadow:0 2px 0 #2d4a83;
+text-shadow:0 -1px 0 #0d3a7e;
+text-decoration:none;
+display:block;
+text-align:left;
+padding:0;
+background-color:#4868a4;
+background-image:none;
+background: -o-linear-gradient(top, #4868a4 0%,#425f96 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4868a4), color-stop(100%,#425f96));
+background: -webkit-linear-gradient(top, #4868a4 0%,#425f96 100%);
+background: -ms-linear-gradient(top, #4868a4 0%,#425f96 100%);
+background: linear-gradient(to bottom, #4868a4 0%,#425f96 100%);
+position:relative;
+border-radius:3px;
+}
+.ProfileWidget a.btnFacebookLogin:before{
+position:absolute;
+content:url(../images/facebook/facebook-connect-f.png);
+top:15%;
+left:.5em;
+}
+.ProfileWidget a.btnFacebookLogin span{
+border:none;
+background:none;
+border-left:1px solid #3c578a;
+padding:.5em;
+display:inline-block;
+padding:.5em;
+margin-left:26px;
+box-shadow:inset 1px 0 0 #6580b7;
+}
+/* -----------------------------------------------------------------------
+End Facebook Login Button
+
+Begin Twitter button
+----------------------------------------------------------------------- */
+a.btnTwitterShare{
+text-decoration:none;
+padding:3px 6px 3px 26px;
+border:1px solid #ccc;
+background-color:#f8f8f8;
+background-image:url('/images/twitter/twitter_btn_icon.gif');
+background-image:url('/images/twitter/twitter_btn_icon.gif'),linear-gradient(top, #FFFFFF, #DEDEDE);
+background-image:url('/images/twitter/twitter_btn_icon.gif'),-o-linear-gradient(top, #FFFFFF, #DEDEDE);
+background-image:url('/images/twitter/twitter_btn_icon.gif'),-moz-linear-gradient(top, #FFFFFF, #DEDEDE);
+background-image:url('/images/twitter/twitter_btn_icon.gif'),-webkit-linear-gradient(top, #FFFFFF, #DEDEDE);
+background-image:url('/images/twitter/twitter_btn_icon.gif')\0/; /* IE8 Hack */
+background-repeat:no-repeat;
+background-position:2px 2px;
+background-position:2px 2px,0 0;
+color:#333 !important;
+padding-left:20px;
+font:bold 11px/18px "Helvetica Neue",arial,sans-serif;
+border-radius:3px;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+a.btnTwitterShare:hover{
+background-color:#ededed;
+background-image:url('/images/twitter/twitter_btn_icon.gif');
+background-image:url('/images/twitter/twitter_btn_icon.gif'),linear-gradient(top, #F8F8F8, #D9D9D9);
+background-image:url('/images/twitter/twitter_btn_icon.gif'),-o-linear-gradient(top, #F8F8F8, #D9D9D9);
+background-image:url('/images/twitter/twitter_btn_icon.gif'),-moz-linear-gradient(top, #F8F8F8, #D9D9D9);
+background-image:url('/images/twitter/twitter_btn_icon.gif'),-webkit-linear-gradient(top, #F8F8F8, #D9D9D9);
+background-image:url('/images/twitter/twitter_btn_icon.gif')\0/; /* IE8 Hack */
+border-color:#bbb;
+}
+*+html a.btnTwitterShare{ /* IE7 Hack */
+background-image:url('/images/twitter/twitter_btn_icon.gif') !important;
+}
+/* -----------------------------------------------------------------------
+End Twitter button
+
+Begin Two Millionth Cache Counter
+----------------------------------------------------------------------- */
+.TwoMillion{
+background-image:url("../images/twomillion/bg_header.png");
+}
+.TwoMillion .Logo.span-16{
+width:350px;
+}
+.TwoMillion h1.span-17{
+width:390px;
+}
+.CacheCounterPanel{
+background:url("../images/twomillion/mountain.png") no-repeat 10px 0;
+height:86px;
+position:relative;
+}
+.CacheCounterPanel a{
+color:#000;
+font-size:14px;
+font-weight:bold;
+text-decoration:none;
+position:absolute;
+top:35%;
+left:90px;
+padding:10px;
+}
+/* -----------------------------------------------------------------------
+End Two Millionth Cache Counter
+
+Begin Legal
+----------------------------------------------------------------------- */
+ol.legal{
+list-style:decimal;
+margin-left:0;
+font-weight:bold;
+}
+ol.legal li > ol{
+list-style:upper-alpha;
+}
+ol.legal li > ol > li > ol{
+list-style:lower-roman;
+}
+ol.legal h3, ol.legal h4, ol.legal h5{
+margin-bottom:.25em;
+}
+ol.legal p{
+font-weight:normal;
+}
+/* -----------------------------------------------------------------------
+End Legal
+
+Begin Media Queries
+----------------------------------------------------------------------- */
+@media only screen and (max-width:1024px){
+    /* HACK: Temp fix skyscraper ad breaking out of container */
+    .container,footer,header,#Navigation{
+    min-width:990px;
+    }
+    .ProfileWidget{
+    /*float:right;*/
+    }
+}
+/* -----------------------------------------------------------------------
+End Media Queries
+----------------------------------------------------------------------- */
